@@ -10,7 +10,7 @@ You will need at least **25GB** of free HDD space, for the container to inflate.
 ## Usage
 To start the container run 
 
-`docker run -d --init --name csgo-dedicated --restart unless-stopped -v csgo-dedicated-config:/var/csgo/cfg -p 27015:27015 -p 27015:27015/udp -e RCON_PASSWORD=mypassword -e CSS_HOSTNAME=myservername -e PORT=27015 damarge/csgo-dedicated`.
+`docker run -d --init --name csgo-dedicated --restart unless-stopped -v csgo-dedicated-config:/var/csgo/cfg -p 27015:27015 -p 27015:27015/udp -e RCON_PASSWORD=mypassword -e CSS_HOSTNAME=myservername -e PORT=27015 damarges/csgo-dedicated`.
 
 The following ENV variables can be configured to your needs
 
