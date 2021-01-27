@@ -1,4 +1,6 @@
 FROM ubuntu:20.04
+# Identify the maintainer of an image
+LABEL maintainer="damarges@gmail.com"
 ADD ./files/supervisor.sh /
 RUN apt-get update \
     && apt-get install -y wget lib32gcc1 lib32stdc++6 libcurl4 unzip locales \
