@@ -1,5 +1,6 @@
 # Counterstrike: Global Offensive (CS:GO) dedicated server
-This image provides a plain CS:Go dedicated server.
+This image provides a plain CS:GO dedicated server.
+It is based on ubuntu 20.04 image, then install steamcmd and thereafter installs or more specific downloads the recent game server image (which can take a while as it is about 20GB of data).
 
 ## System Requirements
 The server is not contained by the image, to keep it small.
@@ -11,13 +12,14 @@ To start the container run `docker run -d --init --name csgo-dedicated --restart
 
 The following ENV variables can be configured to your needs
 
-`RCON_PASSWORD`,  // Rcon password required to control the server while running
-`CSGO_MAXPLAYERS`, // if not set defaulted to 24
-`CSGO_TICK`, // Tickrate 64 or 128 (depending on the performance of your server)
-`CSGO_PASSWORD`,  // if you want the server to be password protected to access to play
-`CSGO_HOSTNAME`,
-`CSGO_GAMETYPE`,
-`CSGO_GAMEMODE`, // set gametype and mode to switch game mode. change map to apply changes to that while in game
+`RCON_PASSWORD` Rcon password required to control the server while running
+
+`CSGO_MAXPLAYERS` number of max number of players that may connect to the server
+`CSGO_TICK` tickrate 64 or 128 (depending on the performance of your server)
+`CSGO_PASSWORD` if you want the server to be password protected to access to play
+`CSGO_HOSTNAME` how your server name should appear in the server list and ingame
+`CSGO_GAMETYPE` 
+`CSGO_GAMEMODE` set gametype and mode to switch game mode. change map to apply changes to that while in game
 
 // Following typical modes as example (first number is gametype, second number is game mode):
 0,0 (casual game)
