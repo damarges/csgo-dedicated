@@ -1,11 +1,11 @@
 # Counterstrike: Global Offensive (CS:GO) dedicated server
 This image provides a plain CS:GO dedicated server.
-It is based on Ubuntu 20.04 image, installs `steamcmd` and thereafter installs or more specific downloads the recent game server image (which can take a while as it is about 20GB of data).
+It is based on Ubuntu 20.04 image, installs `steamcmd` and thereafter downloads the whole dedicated game server image from valve servers (which can take a while as it is about 25GB of data).
 
 ## System Requirements
 The server is not contained by the image, to keep it small.
 It will download and install on first start of the container.
-You will need at least **25GB** of free HDD space, for the container to inflate.
+You will need at least **30GB** of free HDD space, for the container to inflate.
 
 ## Usage
 To start the container run 
