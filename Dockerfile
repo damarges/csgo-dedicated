@@ -2,8 +2,9 @@ FROM ubuntu:20.04
 # Identify the maintainer of an image
 LABEL maintainer="damarges@gmail.com"
 ADD ./files/supervisor.sh /
-RUN apt-get update \
-    && apt-get install -y wget lib32gcc1 lib32stdc++6 libcurl4 unzip locales \
+# Update the image to the latest packages
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y wget lib32gcc1 lib32stdc++6 libcurl4 unzip locales \
     && wget -O /tmp/steamcmd_linux.tar.gz http://media.steampowered.com/installer/steamcmd_linux.tar.gz \
     && mkdir -p /opt/steam \
     && mkdir -p /var/csgo/cfg \
