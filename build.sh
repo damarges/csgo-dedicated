@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build --no-cache -t nilsramsperger/counterstrike-source-dedicated .
+docker build --no-cache -t damarges/csgo-dedicated .
