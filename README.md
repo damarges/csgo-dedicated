@@ -38,8 +38,10 @@ Following typical modes as example (first number is gametype, second number is g
 
 0,2 (wingman game)
 
-Complete list can be found here:
+Complete list of possible game modes can be found here:
+
 https://developer.valvesoftware.com/wiki/CSGO_Game_Mode_Commands
+
 
 
 If you want to have the server to listen on another port, change `-e PORT=27015` and `-p 27015:27015 -p 27015:27015/udp` accordingly.
