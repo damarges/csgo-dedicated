@@ -12,8 +12,7 @@ To start the container run `docker run -d --init --name csgo-dedicated --restart
 
 The following ENV variables can be configured to your needs
 
-`RCON_PASSWORD` Rcon password required to control the server while running
-
+`RCON_PASSWORD` Rcon password required to control the server while running,
 `CSGO_MAXPLAYERS` number of max number of players that may connect to the server
 `CSGO_TICK` tickrate 64 or 128 (depending on the performance of your server)
 `CSGO_PASSWORD` if you want the server to be password protected to access to play
