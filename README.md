@@ -37,14 +37,9 @@ Complete list can be found here:
 https://developer.valvesoftware.com/wiki/CSGO_Game_Mode_Commands
 
 
-If you want to use another port, change `-e PORT=27015` and `-p 27015:27015 -p 27015:27015/udp` accordingly.
+If you want to have the server to listen on another port, change `-e PORT=27015` and `-p 27015:27015 -p 27015:27015/udp` accordingly.
 Internal and external ports must match.
 
-The server's config folder is persisted in the named volume `css-dedicated-config`.
+The server's config folder is persisted in the named volume `csgo-dedicated-config`.
 So if you want to change settings, just tap into the container, change the files within config and restart.
 The changes won't get lost.
-
-## Integrated mods
-* SourceMod 1.9.0
-* MetaModSource 1.10.0
-* DamageReport
