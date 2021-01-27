@@ -1,6 +1,6 @@
 # Counterstrike: Global Offensive (CS:GO) dedicated server
 This image provides a plain CS:GO dedicated server.
-It is based on ubuntu 20.04 image, then install steamcmd and thereafter installs or more specific downloads the recent game server image (which can take a while as it is about 20GB of data).
+It is based on Ubuntu 20.04 image, installs `steamcmd` and thereafter installs or more specific downloads the recent game server image (which can take a while as it is about 20GB of data).
 
 ## System Requirements
 The server is not contained by the image, to keep it small.
