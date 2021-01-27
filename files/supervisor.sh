@@ -2,12 +2,12 @@
 
 loadConfig() {
     echo "Loading config"
-    yes | cp -rfa /var/css/cfg/. /opt/steam/css/cstrike/cfg/
+    yes | cp -rfa /var/csgo/cfg/. /opt/steam/csgo/cstrike/cfg/
 }
 
 storeConfig() {
     echo "Storing config"
-    yes | cp -rfa /opt/steam/css/cstrike/cfg/. /var/css/cfg/
+    yes | cp -rfa /opt/steam/csgo/cstrike/cfg/. /var/csgo/cfg/
 }
 
 shutdown() {
@@ -24,9 +24,9 @@ term_handler() {
 
 install() {
     echo "Installing CS:GO Server"
-    /opt/steam/steamcmd.sh +login anonymous +force_install_dir /opt/steam/css/ +app_update 740 validate +quit
-    mv /tmp/cfg/* /opt/steam/css/cstrike/cfg
-    cd /opt/steam/css/cstrike
+    /opt/steam/steamcmd.sh +login anonymous +force_install_dir /opt/steam/csgo/ +app_update 740 validate +quit
+    mv /tmp/cfg/* /opt/steam/csgo/cstrike/cfg
+    cd /opt/steam/csgo/cstrike
     tar zxvf /tmp/mmsource-1.10.7-git970-linux.tar.gz
     tar zxvf /tmp/sourcemod-1.9.0-git6281-linux.tar.gz
     mv /tmp/gem_damage_report.smx addons/sourcemod/plugins
