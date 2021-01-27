@@ -38,8 +38,8 @@ Following typical modes as example (first number is gametype, second number is g
 
 0,2 (wingman game)
 
-Complete list of possible game modes can be found here:
 
+Complete list of possible game modes can be found here:
 https://developer.valvesoftware.com/wiki/CSGO_Game_Mode_Commands
 
 
