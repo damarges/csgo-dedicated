@@ -27,9 +27,6 @@ install() {
     /opt/steam/steamcmd.sh +login anonymous +force_install_dir /opt/steam/csgo/ +app_update 740 validate +quit
     mv /tmp/cfg/* /opt/steam/csgo/cstrike/cfg
     cd /opt/steam/csgo/cstrike
-    tar zxvf /tmp/mmsource-1.10.7-git970-linux.tar.gz
-    tar zxvf /tmp/sourcemod-1.9.0-git6281-linux.tar.gz
-    mv /tmp/gem_damage_report.smx addons/sourcemod/plugins
     chown -R steam:steam /opt/steam/css
     ln -s /opt/steam/linux32 /home/steam/.steam/sdk32
     echo "Installation done"
@@ -42,10 +39,10 @@ update() {
 }
 
 trap term_handler SIGTERM
-[ ! -d "/opt/steam/css" ] && install || update
+[ ! -d "/opt/steam/csgo" ] && install || update
 loadConfig
 echo "Starting CS:GO Dedicated Server"
-cd /opt/steam/css
+cd /opt/steam/csgo
 su steam -c "./srcds_run -game csgo -port $PORT +exec server.cfg +maxplayers $CSGO_MAXPLAYERS -tickrate $CSGO_TICK +hostname $CSGO_HOSTNAME +game_type $GAMETYPE +game_mode $GAMEMODE +sv_password $CSGO_PASSWORD +rcon_password $RCON_PASSWORD +map de_dust2" & wait ${!}
 echo "CS:GO dedicated died"
 shutdown
