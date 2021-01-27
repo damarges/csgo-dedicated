@@ -43,6 +43,6 @@ trap term_handler SIGTERM
 loadConfig
 echo "Starting CS:GO Dedicated Server"
 cd /opt/steam/csgo
-su steam -c "./srcds_run -game csgo -port $PORT +exec server.cfg +maxplayers $CSGO_MAXPLAYERS -tickrate $CSGO_TICK +hostname $CSGO_HOSTNAME +game_type $GAMETYPE +game_mode $GAMEMODE +sv_password $CSGO_PASSWORD +rcon_password $RCON_PASSWORD +map de_dust2" & wait ${!}
+su steam -c "./srcds_run -game csgo -port $PORT +exec server.cfg +maxplayers $CSGO_MAXPLAYERS -tickrate $CSGO_TICK +hostname $CSGO_HOSTNAME +game_type $CSGO_GAMETYPE +game_mode $CSGO_GAMEMODE +sv_password $CSGO_PASSWORD +rcon_password $RCON_PASSWORD +map de_dust2" & wait ${!}
 echo "CS:GO dedicated died"
 shutdown
