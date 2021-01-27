@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 # Identify the maintainer of an image
 LABEL maintainer="damarges@gmail.com"
 ADD ./files/supervisor.sh /
