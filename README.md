@@ -28,7 +28,9 @@ The following ENV variables can be configured to your needs
 
 `CSGO_GAMEMODE` set gametype and mode to switch game mode. change map to apply changes to that while in game
 
-// Following typical modes as example (first number is gametype, second number is game mode):
+
+
+Following typical modes as example (first number is gametype, second number is game mode):
 
 0,0 (casual game)
 
