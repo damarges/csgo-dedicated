@@ -23,8 +23,8 @@ term_handler() {
 }
 
 install() {
-    echo "Installing CS:S Dedicated Server"
-    /opt/steam/steamcmd.sh +login anonymous +force_install_dir /opt/steam/css/ +app_update 232330 validate +quit
+    echo "Installing CS:GO Server"
+    /opt/steam/steamcmd.sh +login anonymous +force_install_dir /opt/steam/css/ +app_update 740 validate +quit
     mv /tmp/cfg/* /opt/steam/css/cstrike/cfg
     cd /opt/steam/css/cstrike
     tar zxvf /tmp/mmsource-1.10.7-git970-linux.tar.gz
@@ -36,16 +36,16 @@ install() {
 }
 
 update() {
-    echo "Updating CS:S Dedicated Server"
-    /opt/steam/steamcmd.sh +login anonymous +app_update 232330 +quit
+    echo "Updating CS:GO Dedicated Server"
+    /opt/steam/steamcmd.sh +login anonymous +app_update 740 +quit
     echo "Update done"
 }
 
 trap term_handler SIGTERM
 [ ! -d "/opt/steam/css" ] && install || update
 loadConfig
-echo "Starting CS:S Dedicated Server"
+echo "Starting CS:GO Dedicated Server"
 cd /opt/steam/css
-su steam -c "./srcds_run -game cstrike -port $PORT +exec server.cfg +hostname $CSS_HOSTNAME +sv_password $CSS_PASSWORD +rcon_password $RCON_PASSWORD +map de_dust2" & wait ${!}
-echo "CS:S dedicated died"
+su steam -c "./srcds_run -game csgo -port $PORT +exec server.cfg +maxplayers $CSGO_MAXPLAYERS -tickrate $CSGO_TICK +hostname $CSGO_HOSTNAME +game_type $GAMETYPE +game_mode $GAMEMODE +sv_password $CSGO_PASSWORD +rcon_password $RCON_PASSWORD +map de_dust2" & wait ${!}
+echo "CS:GO dedicated died"
 shutdown
